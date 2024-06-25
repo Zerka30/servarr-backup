@@ -10,6 +10,9 @@ from .commands import backup
 logging.basicConfig(
     level=logging.INFO,
     format="%(levelname)s - %(asctime)s - %(message)s",
+    handlers=[
+        logging.StreamHandler(sys.stdout)
+    ]
 )
 
 
