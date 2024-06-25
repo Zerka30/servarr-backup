@@ -1,5 +1,6 @@
 import argparse
 import logging
+import sys
 
 from . import config as cfg
 from .commands import config
