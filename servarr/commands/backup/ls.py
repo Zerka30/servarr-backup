@@ -1,11 +1,12 @@
 import argparse
-from models.type.prowlarr import Prowlarr
-from models.type.radarr import Radarr
-from models.type.sonarr import Sonarr
-
 import humanize
 from datetime import datetime
 from tabulate import tabulate
+
+from ...models.type.prowlarr import Prowlarr
+from ...models.type.radarr import Radarr
+from ...models.type.sonarr import Sonarr
+
 
 def add_subparser(subparsers):
     parser = subparsers.add_parser(

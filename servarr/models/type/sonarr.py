@@ -3,8 +3,9 @@ import json
 import requests
 import time
 import logging
-from models.type import Server
-from models.destination.s3 import S3Bucket
+from . import Server
+from ..destination.s3 import S3Bucket
+
 
 # Configure logging
 logger = logging.getLogger(__name__)

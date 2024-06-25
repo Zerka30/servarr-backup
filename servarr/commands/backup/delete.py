@@ -1,7 +1,7 @@
 import argparse
-from models.type.prowlarr import Prowlarr
-from models.type.radarr import Radarr
-from models.type.sonarr import Sonarr
+from ...models.type.prowlarr import Prowlarr
+from ...models.type.radarr import Radarr
+from ...models.type.sonarr import Sonarr
 
 def add_subparser(subparsers):
     parser = subparsers.add_parser(

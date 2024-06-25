@@ -1,10 +1,10 @@
 import argparse
-import config as cfg
-
-import commands.config as config
-import commands.backup as backup
-
 import logging
+
+from . import config as cfg
+from .commands import config
+from .commands import backup
+
 
 # Configure logging
 logging.basicConfig(
