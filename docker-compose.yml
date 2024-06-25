@@ -1,0 +1,10 @@
+services:
+  backup:
+    image: ghcr.io/zerka30/servarr-backup:cron
+    restart: always
+    environment:
+      CRON_SCHEDULE: 0 0 * * *
+      SERVICES: prowlarr,radarr,sonarr
+    volumes:
+      - ${PWD}/config/servarr.json:/root/.config/servarr/config.json
+    
