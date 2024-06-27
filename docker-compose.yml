@@ -6,5 +6,5 @@ services:
       CRON_SCHEDULE: 0 0 * * *
       SERVICES: prowlarr,radarr,sonarr
     volumes:
-      - ${PWD}/config/servarr.json:/root/.config/servarr/config.json
+      - ${PWD}/config/servarr.yml:/root/.config/servarr/config.yml
     

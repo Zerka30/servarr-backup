@@ -1,0 +1,28 @@
+backups:
+  retention: 90d
+  log: true
+
+  starrs:
+    lidarr:
+    radarr:
+      - name: main
+        url: 
+        api_key: 
+
+    readarr:
+    sonarr:
+      - name: main
+        url: 
+        api_key: 
+    prowlarr:
+      - name: main
+        url: 
+        api_key: 
+
+  destination:
+    s3:
+      endpoint: https://s3.pub1.infomaniak.cloud
+      bucket: servarr
+      key:
+        access: 
+        secret: 
