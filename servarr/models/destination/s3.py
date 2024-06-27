@@ -1,7 +1,8 @@
-from datetime import datetime, timedelta
-import boto3
-import os
 import logging
+import os
+from datetime import datetime, timedelta
+
+import boto3
 
 
 class S3Bucket:
@@ -34,7 +35,7 @@ class S3Bucket:
 
     def delete_file(self, path):
         try:
-            self.s3_client.delete_object(Bucket=self.bucket_name, Key=path)
+            res = self.s3_client.delete_object(Bucket=self.bucket_name, Key=path)
         except Exception as e:
             logging.error(f"Error while deleting file {path}: {str(e)}")
 
@@ -52,3 +53,14 @@ class S3Bucket:
 
             if obj_datetime_native < retention_threshold:
                 self.delete_file(files["Key"])
+                
+    def file_exists(self, path):
+        try:
+            self.s3_client.head_object(Bucket=self.bucket_name, Key=path)
+            return True
+        except self.s3_client.exceptions.ClientError as e:
+            if e.response['Error']['Code'] == "404":
+                return False
+            else:
+                logging.error(f"Error while checking file existence {path}: {str(e)}")
+                return False
