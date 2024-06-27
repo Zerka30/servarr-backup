@@ -10,7 +10,7 @@ DELAY=0
 
 for service in "${services[@]}"; do
   echo "Creating cron entry for service: $service"
-  echo "$CRON_SCHEDULE root sleep $((DELAY * 60)) && /usr/local/bin/servarr backup create $service >> /var/log/servarr.log 2>&1" >> /etc/cron.d/servarr-backup
+  echo "$CRON_SCHEDULE root sleep $((DELAY * 60)) && /usr/local/bin/servarr backup create --type $service >> /var/log/servarr.log 2>&1" >> /etc/cron.d/servarr-backup
   DELAY=$((DELAY + 1))
 done
 
