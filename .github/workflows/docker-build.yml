@@ -35,6 +35,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: ./Dockerfile.cron
+          file: ./docker/Dockerfile.cron
           push: true
           tags: ghcr.io/zerka30/servarr-backup:cron

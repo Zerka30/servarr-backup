@@ -5,7 +5,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y git cron
 RUN pip install git+https://github.com/Zerka30/servarr-backup
 
-COPY setup_cron.sh /usr/local/bin/setup_cron.sh
+COPY ./docker/scripts/setup_cron.sh /usr/local/bin/setup_cron.sh
 RUN chmod +x /usr/local/bin/setup_cron.sh
 
 ENV CRON_SCHEDULE="0 0 * * *"
